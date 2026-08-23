@@ -73,34 +73,34 @@ function editarAluno(){
 }
 
 function menuProfessor() {
-    let opcao;
+    let opcao
 
     do {
-        console.log("\n===== LIVRO DE REGISTROS =====");
-        console.log("1 - Adicionar aluno");
-        console.log("2 - Visualizar aluno");
-        console.log("3 - Editar registro");
-        console.log("4 - Sair");
+        console.log("===== LIVRO DE REGISTROS =====")
+        console.log("1 - Adicionar aluno")
+        console.log("2 - Visualizar aluno")
+        console.log("3 - Editar registro")
+        console.log("4 - Sair")
 
-        opcao = prompt("Escolha uma opção: ");
+        opcao = prompt("Escolha uma opção: ")
 
         if (opcao === "1") {
-            adicionarAluno();
+            adicionarAluno()
         } 
         else if (opcao === "2") {
-            visualizarAluno();
+            visualizarAluno()
         } 
         else if (opcao === "3") {
-            editarAluno();
+            editarAluno()
         } 
         else if (opcao === "4") {
-            console.log("Saindo do sistema...");
+            console.log("Saindo do sistema...")
         } 
         else {
-            console.log("Opção inválida!");
+            console.log("Opção inválida!")
         }
 
-    } while (opcao !== "4");
+    } while (opcao !== "4")
 }
 
 menuProfessor()
