@@ -4,13 +4,13 @@ console.log("Olá, seja bem vindo(a) ao livro de registros")
 
 const alunos = []
 
-
 class Alunos {
     #matricula
-    constructor(nome, turma, matricula, registro){
+    constructor(nome, turma, matricula, data, registro){
     this.nome = nome
     this.turma = turma
     this.#matricula = matricula
+    this.data = new Date()
     this.registro = registro
 }
 
@@ -18,6 +18,7 @@ visualizarAlunos(){
     console.log(`Nome: ${this.nome}`)
     console.log(`Turma: ${this.turma}`)
     console.log(`Matricula: ${this.#matricula}`)
+    console.log(`Dia do acontecido: ${String(this.data.getDate()).padStart(2, 0)}/${String(this.data.getMonth() + 1).padStart(2, 0)}/${String(this.data.getFullYear())}`);
     console.log(`Registro: ${this.registro}`)
 }
 
@@ -31,8 +32,20 @@ get matricula(){
 }
 
 function adicionarAluno(){
-    let nome = prompt("Nome do aluno: ")
-    let turma = prompt("Turma: ")
+    let nome
+    let turma
+    do{
+        nome = prompt("Nome do aluno: ")
+        if(nome === ""){
+            console.log("Insira o nome do aluno")
+        }
+    }while(nome === "")
+    do{ 
+        turma = prompt("Turma: ")
+        if(turma === ""){
+            console.log("Insira a turma do aluno")
+        }
+    }while(turma === "")
     let matricula = prompt("Matrícula: ")
     let registro = prompt("Registro: ")
 
