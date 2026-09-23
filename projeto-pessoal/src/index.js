@@ -1,5 +1,6 @@
 const prompt = require('prompt-sync')();
 const Factory = require("./services/Factory")
+const separador = require("./services/sep")
 
 const fac = new Factory()
 
@@ -63,10 +64,16 @@ function menuProfessor() {
             fac.adicionarAluno(nome, turma, matricula, registro)
         } 
         else if (opcao === "2") {
-            visualizarAluno()
+            separador()
+            let pesquisa = prompt("Qual o nome ou matrícula do aluno? ")
+            separador()
+            console.log(fac.pesquisarAluno(pesquisa))
         } 
         else if (opcao === "3") {
-            editarAluno()
+            let pesquisa = prompt("qual o nome ou matricula do aluno: ")
+            const alunoPesquisado = fac.pesquisarAluno(pesquisa)
+            let novoRegistro = prompt("digite um novo registro: ")
+            fac.editarAluno(alunoPesquisado, novoRegistro)
         } 
         else if (opcao === "4") {
             console.log("Saindo do sistema...")
@@ -77,3 +84,5 @@ function menuProfessor() {
 
     } while (opcao !== "4")
 }
+
+menuProfessor()
