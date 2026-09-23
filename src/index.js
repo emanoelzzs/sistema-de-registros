@@ -3,7 +3,7 @@ const Factory = require("./services/Factory")
 const separador = require("./services/sep")
 
 const fac = new Factory()
-
+console.clear()
 console.log("Olá, seja bem vindo(a) ao livro de registros\n")
 
 function menuProfessor() {
@@ -19,6 +19,7 @@ function menuProfessor() {
         opcao = prompt("Escolha uma opção: ")
 
         if (opcao === "1") {
+            console.clear()
             let nome
             let turma
             let matricula
@@ -60,19 +61,24 @@ function menuProfessor() {
                     console.log("Insira o registro do aluno")
                 }
             }while(registro === "")
-            
+            console.clear()
             fac.adicionarAluno(nome, turma, matricula, registro)
         } 
         else if (opcao === "2") {
+            console.clear()
             separador()
             let pesquisa = prompt("Qual o nome ou matrícula do aluno? ")
             separador()
+            console.clear()
             console.log(fac.pesquisarAluno(pesquisa))
         } 
         else if (opcao === "3") {
+            console.clear()
+            separador()
             let pesquisa = prompt("qual o nome ou matricula do aluno: ")
             const alunoPesquisado = fac.pesquisarAluno(pesquisa)
             let novoRegistro = prompt("digite um novo registro: ")
+            console.clear()
             fac.editarAluno(alunoPesquisado, novoRegistro)
         } 
         else if (opcao === "4") {
